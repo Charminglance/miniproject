@@ -1,0 +1,8 @@
+{
+  "name": "VoltQuest EV Charging",
+  "description": "A comprehensive EV charging station finder and booking application featuring real-time location tracking, station details, and charging session management.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

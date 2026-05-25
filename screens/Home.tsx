@@ -114,11 +114,11 @@ const Home: React.FC = () => {
           <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png" />
           <MapController />
           {processedStations.map((s: any, i) => (
-            <Marker 
-                key={i} 
-                position={[parseFloat(s.lat), parseFloat(s.lng)]} 
-                icon={GreenIcon} 
-                eventHandlers={{ click: () => handleAction(s, 'MAP') }} 
+            <Marker
+                key={i}
+                position={[parseFloat(s.lat), parseFloat(s.lng)]}
+                icon={GreenIcon}
+                eventHandlers={{ click: () => handleAction(s, AppScreen.STATION_DETAIL) }}
             />
           ))}
         </MapContainer>

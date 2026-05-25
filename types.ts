@@ -9,7 +9,8 @@ export enum AppScreen {
   PROFILE         = 'PROFILE',
   MY_VEHICLES     = 'MY_VEHICLES',
   QR_SCAN         = 'QR_SCAN',
-  ADMIN           = 'ADMIN'
+  ADMIN           = 'ADMIN',
+  CHARGER_LIST    = 'CHARGER_LIST'
 }
 
 export interface Charger {

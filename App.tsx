@@ -12,7 +12,9 @@ import MyVehicles      from './screens/MyVehicles';
 import NavigationScreen from './screens/NavigationScreen';
 import QRScanner       from './screens/QRScanner';
 import AdminDashboard  from './screens/AdminDashboard';
+import ChargerScreen   from './screens/ChargerScreen';
 import { AuthProvider } from './services/AuthContext';
+import { KERALA_DUMMY_STATIONS } from './constants';
 
 interface AppContextType {
   currentScreen: AppScreen;
@@ -69,8 +71,8 @@ const App: React.FC = () => {
             connections: poi.Connections || [], numSlots: poi.Connections?.length || 0,
             source: 'ocm', isPublic: true
           }));
-          setStations([...sheet, ...ocm]);
-        } catch { setStations(sheet); }
+          setStations([...KERALA_DUMMY_STATIONS, ...sheet, ...ocm]);
+        } catch { setStations([...KERALA_DUMMY_STATIONS, ...sheet]); }
       }
     });
 
@@ -101,6 +103,7 @@ const App: React.FC = () => {
       case AppScreen.NAVIGATION:       return <NavigationScreen />;
       case AppScreen.QR_SCAN:          return <QRScanner />;
       case AppScreen.ADMIN:            return <AdminDashboard />;
+      case AppScreen.CHARGER_LIST:     return <ChargerScreen />;
       default:                         return <Home />;
     }
   };
